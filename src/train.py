@@ -14,14 +14,14 @@ def run_train():
     utils.Data_load("../input/az-handwritten-alphabets-in-csv-format/A_Z Handwritten Data.csv",
     mode='train',
     trans=utils.transformations),
-    batch_size=20,
+    batch_size=config.train_batch_size,
     shuffle=True)
 
     test_data=DataLoader(
     utils.Data_load("../input/az-handwritten-alphabets-in-csv-format/A_Z Handwritten Data.csv",
     mode='test',
     trans=utils.transformations),
-    batch_size=20,
+    batch_size=config.test_batch_size,
     shuffle=False)
     
     
@@ -49,9 +49,9 @@ def run_train():
 
 
     #optimizer
-    lr = 0.0005
-    b1 = 0.5
-    b2 = 0.996
+    lr = config.lr
+    b1 = config.b1
+    b2 = config.b2
 
     optim_G = torch.optim.Adam(itertools.chain(
         G_ab.parameters(), G_ba.parameters()), lr=lr, betas=(b1, b2))
@@ -60,8 +60,8 @@ def run_train():
 
 
     #lr scheduler
-    epochs = 60
-    decay_epoch = 20
+    epochs = config.epochs
+    decay_epoch = config.decay_epoch
 
 
     def lambda_func(epoch): return 1 - max(0, epoch -
