@@ -64,8 +64,7 @@ def run_train():
     decay_epoch = config.decay_epoch
 
 
-    def lambda_func(epoch): return 1 - max(0, epoch -
-                                        decay_epoch)/(epochs-decay_epoch)
+    lambda_func= lambda epoch: 1 - max(0, epoch-decay_epoch) / (epochs-decay_epoch)
 
 
     lr_scheduler_G = torch.optim.lr_scheduler.LambdaLR(

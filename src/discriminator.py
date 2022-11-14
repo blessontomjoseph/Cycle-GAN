@@ -6,7 +6,7 @@ class Discriminator(nn.Module):
         super().__init__()
         self.main = nn.Sequential(
             *self.block(in_channels, 64, norm=False),  # 28-14
-            *self.block(64, 128, norm=True),  # 141-7
+            *self.block(64, 128, norm=True),  # 14-7
             nn.ZeroPad2d((1, 0, 1, 0)),  # 7-8
             nn.Conv2d(128, 1, 4, 1, 1))  # 8-7  fianl shape (batch_size x1x7x7)
 
