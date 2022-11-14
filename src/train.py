@@ -143,4 +143,4 @@ def run_train():
                 ''')
 
                 a, b = next(iter(train_data))
-                utils.plot(a, b)
+                utils.save_plot(a, b,G_ab,G_ba,epoch)

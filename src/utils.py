@@ -48,7 +48,7 @@ transformations = transforms.Compose([transforms.ToTensor(),
                                       ])
 
 
-def plot(real_a, real_b):
+def save_plot(real_a, real_b,G_ab,G_ba,epoch):
     """plots the generated images
 
     Args:
@@ -71,4 +71,4 @@ def plot(real_a, real_b):
         plt.figure(figsize=(8, 8))
         plt.matshow(grid)
         plt.axis('off')
-        plt.show()
+        plt.savefig(f"output/epoch_{epoch+1}.png")
