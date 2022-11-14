@@ -3,7 +3,7 @@
 - The implementation generates 28x28 images of 'A's from images of 'B's of the same size, and vice versa
 - Convolusion is used on both Generator and Discriminator
 #### Models
-- Here we create 2 instances of both models
+- Here we create 2 instances of generative and discriminative models
     -  Generator for A to B generation
     -  Generator for B to A generation
     -  Discriminator for classifying fake and areal A's
@@ -14,7 +14,7 @@
 #### Optimizations
 - The generator is optimized using 3 loss functions
     -  mean L1 Loss between real image and produced fake image from both the networks
-    -  mean L1 Loss between real images and reproduces versions of real image from fake image this is the cycle loss
+    -  mean L1 Loss between real images and reproduced versions of real images from fake images on both the generative networks this is the cycle loss
     -  mean MSE Loss between disriminator output of fake images and real labels,here real labels are ones and fake labels are zeros 
 
 ![arch](rd_files/gen.jpg)
