@@ -13,14 +13,14 @@
 
 #### Optimizations
 - The generator is optimized using 3 loss functions
-    -  mean L1 Loss between real image and produced fake image from both the networks
-    -  mean L1 Loss between real images and reproduced versions of real images from fake images on both the generative networks this is the cycle loss
-    -  mean MSE Loss between disriminator output of fake images and real labels,here real labels are ones and fake labels are zeros 
+    -  Mean L1 Loss between real image and produced fake image from both the networks
+    -  Mean L1 Loss between real images and reproduced versions of real images from fake images on both the generative networks this is the cycle loss
+    -  Mean MSE Loss between disriminator output of fake images and real labels,here real labels are ones and fake labels are zeros 
 
 ![arch](rd_files/gen.jpg)
 - All the threee losses combined to optimize the generator network weights which includes two generator models,one for A to B generation and other one for B to A generation
-- 2 separate classifiers/discriminators trained to classify inputs into  A or not A, and B or not B 
-- these models are trained on supervision with real and fake data with curresponding labels as ones and zeros
+- Two separate classifiers/discriminators trained to classify inputs into  A or not A, and B or not B 
+- These models are trained with supervision with real and fake data with curresponding labels as ones and zeros
 
 ![arch](rd_files/discr.jpg)
 
