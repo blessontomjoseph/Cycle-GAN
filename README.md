@@ -19,7 +19,6 @@
 
 ![arch](rd_files/gen.jpg)
 - All the threee losses combined to optimize the generator network weights which includes two generator models,one for A to B generation and other one for B to A generation
-
 - 2 separate classifiers/discriminators trained to classify inputs into  A or not A, and B or not B 
 - these models are trained on supervision with real and fake data with curresponding labels as ones and zeros
 
